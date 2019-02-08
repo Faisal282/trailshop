@@ -40,6 +40,7 @@ DROP TABLE IF EXISTS `pesanan`;
 
 CREATE TABLE `pesanan` (
   `id_nota` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) DEFAULT NULL,
   `id_produk` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
   `status` int(1) DEFAULT NULL,
@@ -47,16 +48,21 @@ CREATE TABLE `pesanan` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_nota`),
   KEY `id_produk` (`id_produk`),
-  CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  KEY `id_user` (`id_user`),
+  CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`),
+  CONSTRAINT `pesanan_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `pesanan` */
 
-insert  into `pesanan`(`id_nota`,`id_produk`,`qty`,`status`,`created_at`,`updated_at`) values 
-(1,2,2,0,NULL,NULL),
-(2,1,1,1,'2019-01-31 18:48:42',NULL),
-(3,2,1,0,'2019-01-31 19:01:04',NULL),
-(4,2,2,0,'2019-02-02 00:55:58','2019-02-02 00:56:00');
+insert  into `pesanan`(`id_nota`,`id_user`,`id_produk`,`qty`,`status`,`created_at`,`updated_at`) values 
+(1,2,2,1,0,NULL,NULL),
+(2,3,1,1,1,'2019-01-31 18:48:42',NULL),
+(3,3,2,1,0,'2019-01-31 19:01:04',NULL),
+(4,2,2,1,0,'2019-02-02 00:55:58','2019-02-02 00:56:00'),
+(5,2,1,1,NULL,'0000-00-00 00:00:00',NULL),
+(6,2,2,1,NULL,'0000-00-00 00:00:00',NULL),
+(7,2,1,1,NULL,'2019-02-08 19:40:42',NULL);
 
 /*Table structure for table `produk` */
 
@@ -67,6 +73,7 @@ CREATE TABLE `produk` (
   `nama_produk` varchar(255) DEFAULT NULL,
   `jenis_produk` enum('trail','sport','bebek','street','matic') DEFAULT NULL,
   `brand` int(11) DEFAULT NULL,
+  `harga` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_produk`),
   KEY `brand` (`brand`),
   CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`brand`) REFERENCES `brand` (`id_brand`) ON DELETE NO ACTION
@@ -74,9 +81,9 @@ CREATE TABLE `produk` (
 
 /*Data for the table `produk` */
 
-insert  into `produk`(`id_produk`,`nama_produk`,`jenis_produk`,`brand`) values 
-(1,'CBR 250','bebek',1),
-(2,'KLX',NULL,1);
+insert  into `produk`(`id_produk`,`nama_produk`,`jenis_produk`,`brand`,`harga`) values 
+(1,'CBR 250','bebek',1,10000000),
+(2,'KLX',NULL,1,15000000);
 
 /*Table structure for table `users` */
 

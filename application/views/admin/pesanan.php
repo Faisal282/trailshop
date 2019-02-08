@@ -246,6 +246,7 @@
 									<thead class="text-capitalize">
 										<tr>
 											<th>No</th>
+											<th>Nama Pembeli</th>
 											<th>Nama Produk</th>
 											<th>Brand</th>
 											<th>Jumlah</th>
@@ -260,6 +261,9 @@
 										<tr>
 											<td>
 												<?= $no ?>
+											</td>
+											<td>
+												<?= $p['nama'] ?>
 											</td>
 											<td>
 												<?= $p['nama_produk'] ?>

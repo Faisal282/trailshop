@@ -9,7 +9,7 @@ class Users extends CI_Controller {
     {
         parent::__construct();
         //Do your magic here
-        $this->load->model('Pelanggan_model');
+        $this->load->model('Users_model');
     }
     
 
@@ -38,7 +38,7 @@ class Users extends CI_Controller {
     public function store()
     {
         $data['judul'] = 'Store';
-        // $data['produk'] = $this->Users_model->
+        $data['motor'] = $this->Users_model->getAllProduk();
         $this->load->view('template/user/header', $data);
         $this->load->view('users/store');    
         $this->load->view('template/user/footer');
@@ -47,9 +47,17 @@ class Users extends CI_Controller {
     public function cart()
     {
         $data['judul'] = 'Store';
+        $data['motor'] = $this->Users_model->getAllProduk();
+        $data['pesanan'] = $this->Users_model->getAllPesananById();
         $this->load->view('template/user/header', $data);
         $this->load->view('users/cart');    
         $this->load->view('template/user/footer');
+    }
+
+    public function beliBarang($idBarang)
+    {
+        $this->Users_model->insertPesanan($idBarang);
+        redirect('users/store','refresh');
     }
 
 }

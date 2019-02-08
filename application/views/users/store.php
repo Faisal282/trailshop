@@ -297,12 +297,12 @@
 </header>
 
 <!-- Title Page -->
-<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?= base_url('assets/') ?>images/heading-pages-02.jpg);">
+<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?= base_url('assets/') ?>bgstore.jpg); background-position: 0vh -40vh;">
 	<h2 class="l-text2 t-center">
-		Women
+		MOTOR
 	</h2>
 	<p class="m-text13 t-center">
-		New Arrivals Women Collection 2018
+		Motor Terbaru Di Tahun 2019
 	</p>
 </section>
 
@@ -464,12 +464,12 @@
 
 				<!-- Product -->
 				<div class="row">
+					<?php foreach ($motor as $m ) : ?>
 					<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
-					<?php foreach ($produk as $p ) : ?>
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-								<img src="<?= base_url('assets/') ?>images/item-02.jpg" alt="IMG-PRODUCT">
+								<img src="<?= base_url('assets/') ?>cbr250rr.jpg" alt="IMG-PRODUCT">
 
 								<div class="block2-overlay trans-0-4">
 									<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -479,8 +479,8 @@
 
 									<div class="block2-btn-addcart w-size1 trans-0-4">
 										<!-- Button -->
-										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-											Add to Cart
+										<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" onclick="window.location.href='<?= base_url('users/beliBarang/') . $m['id_produk'] ?>'">
+											Pesan
 										</button>
 									</div>
 								</div>
@@ -488,16 +488,16 @@
 
 							<div class="block2-txt p-t-20">
 								<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									Herschel supply co 25l
+									<?= $m['nama_produk'] ?>
 								</a>
 
 								<span class="block2-price m-text6 p-r-5">
-									$75.00
+									Rp. <?= $m['harga'] ?>
 								</span>
 							</div>
 						</div>
-					<?php endforeach; ?>
 					</div>
+					<?php endforeach; ?>
 				</div>
 
 				<!-- Pagination -->

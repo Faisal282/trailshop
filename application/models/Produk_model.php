@@ -37,6 +37,7 @@ class Produk_model extends CI_Model {
 		$this->db->from('pesanan');
 		$this->db->join('produk', 'pesanan.id_produk = produk.id_produk');
 		$this->db->join('brand', 'produk.brand = brand.id_brand');
+		$this->db->join('users', 'pesanan.id_user = users.id');
 		return $this->db->get()->result_array();
 	}
 
