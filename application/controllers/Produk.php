@@ -23,6 +23,7 @@ class Produk extends CI_Controller {
 		$this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');
 		$this->form_validation->set_rules('jenis_produk', 'jenis_produk', 'required');
 		$this->form_validation->set_rules('brand', 'brand', 'required');
+		$this->form_validation->set_rules('harga', 'harga', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('pesan', 'gagal tambah data karena field ada yang kurang');
@@ -32,6 +33,7 @@ class Produk extends CI_Controller {
 				'nama_produk' => $this->input->post('nama_produk'), 
 				'jenis_produk' => $this->input->post('jenis_produk'), 
 				'brand' => $this->input->post('brand'), 
+				'harga' => $this->input->post('harga'), 
 			);
 
 			$this->Produk_model->tambahProduk($dataProduk);

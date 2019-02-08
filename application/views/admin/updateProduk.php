@@ -14,7 +14,7 @@
 		<option value="<?= $b['id_brand'] ?>"><?= $b['nama_brand'] ?></option>
 	<?php } ?>
 	</select>
-	<input type="text" name="nama_produk" id="nama_produk" value="<?= $p['nama_produk'] ?>">
+	<input type="text" name="harga" id="harga" value="<?= $p['harga'] ?>">
 	<button type="submit">UPDATE</button>
 <?php } ?>
 </form>

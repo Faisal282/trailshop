@@ -77,13 +77,14 @@ CREATE TABLE `produk` (
   PRIMARY KEY (`id_produk`),
   KEY `brand` (`brand`),
   CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`brand`) REFERENCES `brand` (`id_brand`) ON DELETE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 /*Data for the table `produk` */
 
 insert  into `produk`(`id_produk`,`nama_produk`,`jenis_produk`,`brand`,`harga`) values 
 (1,'CBR 250','bebek',1,10000000),
-(2,'KLX',NULL,1,15000000);
+(2,'KLX',NULL,1,15000000),
+(6,'C70','bebek',1,1000);
 
 /*Table structure for table `users` */
 

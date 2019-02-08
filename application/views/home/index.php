@@ -1560,7 +1560,7 @@
 							<form action="<?= base_url('produk/tambah') ?>" method="POST">
 								<div class="form-group">
 									<label for="nama_produk">Nama Produk</label>
-									<input type="text" class="form-control" id="nama_produk" aria-describedby="emailHelp" placeholder="Enter email"
+									<input type="text" class="form-control" id="nama_produk" aria-describedby="emailHelp" placeholder="Enter Produk Nama"
 									 name="nama_produk">
 								</div>
 								<div class="form-group">
@@ -1582,6 +1582,11 @@
 										</option>
 										<?php endforeach; ?>
 									</select>
+								</div>
+								<div class="form-group">
+									<label for="harga">Harga</label>
+									<input type="text" class="form-control" id="harga" aria-describedby="emailHelp" placeholder="Enter Harga"
+									 name="harga">
 								</div>
 						</div>
 					</div>

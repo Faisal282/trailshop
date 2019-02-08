@@ -55,6 +55,7 @@ class Admin extends CI_Controller {
 		$this->form_validation->set_rules('id_produk', 'id_produk', 'required');
 		$this->form_validation->set_rules('nama_produk', 'nama_produk', 'required');
 		$this->form_validation->set_rules('jenis_produk', 'jenis_produk', 'required');
+		$this->form_validation->set_rules('harga', 'harga', 'required');
 		$this->form_validation->set_rules('id_brand', 'id_brand', 'required');
 
 		if ($this->form_validation->run() == TRUE ) {

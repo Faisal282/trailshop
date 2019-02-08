@@ -50,6 +50,7 @@ class Produk_model extends CI_Model {
 			'nama_produk' => $this->input->post('nama_produk'),
 			'jenis_produk' => $this->input->post('jenis_produk'),
 			'brand' => $this->input->post('id_brand'),
+			'harga' => $this->input->post('harga'),
 		]);
 		
 	}
