@@ -1,4 +1,10 @@
-<?php if ($_SESSION['role'] == 0) : ?>
+<?php if ($_SESSION['role'] == 1) : ?>
+	<!-- ini berfungsi untuk view admin saja -->
+<?php else: ?>
+	<!-- ini berfungsi untuk view pelanggan saja -->
+<?php endif; ?>
+
+
 <!-- Header -->
 <header class="header1">
 	<!-- Header desktop -->
